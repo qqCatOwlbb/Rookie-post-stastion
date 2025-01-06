@@ -22,9 +22,6 @@
 ## 文件结构
 ```code
     |-src
-     |-images
-      |-屏幕截图 2025-01-06 133551.png //测试结果
-      |-屏幕截图 2025-01-06 133617.png
      |-manager
       |-ItemManager.java    //实现商品管理的核心逻辑。
       |-OrderManager.java   //实现订单管理的核心逻辑。
