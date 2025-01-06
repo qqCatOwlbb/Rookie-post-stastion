@@ -83,6 +83,7 @@ CREATE TABLE `order` (
     - 插入、查询、更新、删除商品。
     - 创建、查询、更新、删除订单。
 - 测试结果：
+- 
   <img width="731" alt="屏幕截图 2025-01-06 133551" src="https://github.com/user-attachments/assets/24056cd2-f92b-447f-8e33-35bc42fb03b1" />
 
   <img width="724" alt="屏幕截图 2025-01-06 133617" src="https://github.com/user-attachments/assets/47b3569c-7503-45d2-8a1a-bbca62fb93dd" />
