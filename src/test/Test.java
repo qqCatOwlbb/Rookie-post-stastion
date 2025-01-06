@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 public class Test {
     public static void main(String[] args) {
+
         testItemManager();
         testOrderManager();
     }
@@ -26,7 +27,7 @@ public class Test {
         System.out.println("测试查询商品：");
         Item item = ItemManager.selectItem("测试商品1");
         if (item != null) {
-            System.out.println("查询到商品: " + item);
+            Item.show(item);
         } else {
             System.out.println("未找到商品");
         }
@@ -38,7 +39,8 @@ public class Test {
         // 验证更新后的价格
         item = ItemManager.selectItem("测试商品1");
         if (item != null) {
-            System.out.println("更新后商品信息: " + item);
+            System.out.println("更新后商品信息: " );
+            Item.show(item);
         }
 
         // 测试删除商品
@@ -47,6 +49,8 @@ public class Test {
         Item deletedItem = ItemManager.selectItem("测试商品2");
         if (deletedItem == null) {
             System.out.println("商品已成功删除");
+        }else{
+            System.out.println("商品删除失败");
         }
     }
 
@@ -57,26 +61,25 @@ public class Test {
         // 测试创建订单
         System.out.println("测试创建订单：");
         OrderManager.insertOrder("测试商品1", "测试用户", 2);
+        OrderManager.insertOrder("测试商品1", "测试用户", 3);
 
         // 测试按时间查询订单
         System.out.println("测试按时间查询订单：");
         ArrayList<Order> ordersByTime = OrderManager.selectOrderByTime("测试用户");
-        for (Order order : ordersByTime) {
-            System.out.println(order);
-        }
+        Order.show(ordersByTime);
 
         // 测试按价格查询订单
         System.out.println("测试按价格查询订单：");
         ArrayList<Order> ordersByPrice = OrderManager.selectOrderByPrice("测试用户");
-        for (Order order : ordersByPrice) {
-            System.out.println(order);
-        }
+        Order.show(ordersByPrice);
 
         // 测试修改订单
         System.out.println("测试修改订单：");
         if (!ordersByTime.isEmpty()) {
             int orderId = ordersByTime.get(0).getOrderId();
-            OrderManager.updateOrder(orderId, "测试商品1", 3);
+            OrderManager.updateOrder(orderId, "测试商品1", 5);
+            System.out.println("修改后的订单：");
+            Order.show(OrderManager.selectOrderByTime("测试用户"));
         }
 
         // 测试删除订单
@@ -84,6 +87,8 @@ public class Test {
         if (!ordersByTime.isEmpty()) {
             int orderId = ordersByTime.get(0).getOrderId();
             OrderManager.deleteOrder(orderId);
+            System.out.println("修改后的订单：");
+            Order.show(OrderManager.selectOrderByTime("测试用户"));
         }
     }
 }
