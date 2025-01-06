@@ -54,20 +54,20 @@
 
 ```sql
 CREATE TABLE `item` (
-  `itemId` int NOT NULL AUTO_INCREMENT COMMENT '商品编号',
-  `itemName` varchar(20) COLLATE utf8mb3_bin NOT NULL COMMENT '商品名',
-  `itemPrice` double unsigned NOT NULL COMMENT '商品价格',
-  PRIMARY KEY (`itemId`)
+  `itemid` int NOT NULL AUTO_INCREMENT COMMENT '商品编号',
+  `itemname` varchar(20) COLLATE utf8mb3_bin NOT NULL COMMENT '商品名',
+  `itemprice` double unsigned NOT NULL COMMENT '商品价格',
+  PRIMARY KEY (`itemid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin
 
 CREATE TABLE `order` (
-  `orderId` int NOT NULL AUTO_INCREMENT COMMENT '订单编号',
-  `itemId` int NOT NULL COMMENT '商品编号',
-  `purchaserName` varchar(20) COLLATE utf8mb3_bin NOT NULL DEFAULT '匿名' COMMENT '购买人姓名',
-  `orderTime` datetime NOT NULL COMMENT '下单时间',
-  `orderPrice` double unsigned NOT NULL COMMENT '订单价格',
-  `purchaseNum` int unsigned NOT NULL COMMENT '购买数量',
-  PRIMARY KEY (`orderId`)
+  `orderid` int NOT NULL AUTO_INCREMENT COMMENT '订单编号',
+  `itemid` int NOT NULL COMMENT '商品编号',
+  `purchasername` varchar(20) COLLATE utf8mb3_bin NOT NULL DEFAULT '匿名' COMMENT '购买人姓名',
+  `ordertime` datetime NOT NULL COMMENT '下单时间',
+  `orderprice` double unsigned NOT NULL COMMENT '订单价格',
+  `purchasenum` int unsigned NOT NULL COMMENT '购买数量',
+  PRIMARY KEY (`orderid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin
 ```
 
